@@ -35,8 +35,8 @@ public class Queue
         {
             int index = i - 1;
             _array[index] = _array[i];
-            Console.WriteLine("index = " + index);
-            Console.WriteLine(_array[index]); 
+            //Console.WriteLine("index = " + index);
+            //Console.WriteLine(_array[index]); 
         }
         
         _pointer--;

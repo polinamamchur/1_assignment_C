@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace ConsoleApp1;
 
 public class Stack
@@ -31,5 +33,18 @@ public class Stack
         var value = _array[_pointer];
         _pointer--;
         return value;
+    }
+
+    public string Check(string value)
+    {
+        for (int index = 0; index < _pointer; index++)
+        {
+            if (_array[index] == value)
+            {
+                return _array[index];
+            }
+        }
+
+        return null;
     }
 }
