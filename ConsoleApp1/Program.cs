@@ -1,6 +1,6 @@
 ﻿using ConsoleApp1;
 
-const string variable = "21 + 3*(32 - 567)";
+const string variable = "21 + 3 / (32 - 567)";
 ArrayList tokens = new ArrayList();
 Stack opers = new Stack();
 Queue simbols = new Queue();
@@ -53,22 +53,31 @@ foreach (var el in tokens.GetElements())
     if (isNumeric == true)
     { 
         simbols.Push(el); 
-       Console.WriteLine(simbols);
+       //Console.WriteLine(simbols);
 
     }
 
     if (isNumeric == false)
     {
-       
-        if (el == "+" || el == "-") 
+        if (el == "*" || el == "/")
+        {
+            opers.Push(el);
+        }
+        if (el == "+" || el == "-")
         {
             if (opers.Check("*") == "*" || opers.Check("/") == "/")
             {
+                //opers.Pull();
                 opers.Push(el);
+                Console.WriteLine(opers.GetElements()[0]);
             }
-            
-            //Console.WriteLine(opers.Check("+"));
-        }
+            else
+            {
+                //opers.Push(el);
+            }
+        }   
+        //Console.WriteLine(opers.Check("+"));
+        
         
         
     }    
@@ -76,7 +85,7 @@ foreach (var el in tokens.GetElements())
     //Console.WriteLine("isNumeric = " + isNumeric);
 }
 
-Console.WriteLine(opers.GetElements()[0]);
+//Console.WriteLine(opers.GetElements()[0]);
 
 
 
