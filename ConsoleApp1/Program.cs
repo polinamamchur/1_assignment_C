@@ -76,7 +76,7 @@ foreach (var el in tokens.GetElements())
     //Console.WriteLine("isNumeric = " + isNumeric);
 }
 
-
+Console.WriteLine(opers.GetElements()[0]);
 
 
 

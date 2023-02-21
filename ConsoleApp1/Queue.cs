@@ -38,11 +38,17 @@ public class Queue
             //Console.WriteLine("index = " + index);
             //Console.WriteLine(_array[index]); 
         }
-        
+
         _pointer--;
 
 
         // _array.RemoveAt(value);
         return value;
     }
+
+    public string[] GetElements()
+    {
+        return _array;
+    }
+    
 }

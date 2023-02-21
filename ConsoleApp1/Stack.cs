@@ -47,4 +47,8 @@ public class Stack
 
         return null;
     }
+    public string[] GetElements()
+    {
+        return _array;
+    }
 }
