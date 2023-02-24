@@ -40,8 +40,6 @@ public class Queue
         }
 
         _pointer--;
-
-
         // _array.RemoveAt(value);
         return value;
     }

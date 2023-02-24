@@ -29,9 +29,9 @@ public class Stack
             //you can also raise an exception here, but we're simple returning nothing
             return null;
         }
-
-        var value = _array[_pointer];
+        
         _pointer--;
+        var value = _array[_pointer];
         return value;
     }
 
@@ -46,6 +46,23 @@ public class Stack
         }
 
         return null;
+    }
+
+    public string Pop()
+    {
+        if (_pointer == 0)
+        {
+            throw new InvalidOperationException("Stack is empty");
+        }
+
+        _pointer--;
+        var value = _array[_pointer];
+        _array[_pointer] = null; // clear the reference to the popped element
+        return value;
+    }
+    public bool IsEmpty()
+    {
+        return _pointer == 0;
     }
     public string[] GetElements()
     {
