@@ -1,6 +1,7 @@
-namespace ConsoleApp1;
+using System;
+using System.Collections;
 
-public class Queue
+public class Queue : IEnumerable
 {
     private const int Capacity = 50;
 
@@ -35,12 +36,10 @@ public class Queue
         {
             int index = i - 1;
             _array[index] = _array[i];
-            //Console.WriteLine("index = " + index);
-            //Console.WriteLine(_array[index]); 
         }
 
         _pointer--;
-        // _array.RemoveAt(value);
+
         return value;
     }
 
@@ -48,5 +47,12 @@ public class Queue
     {
         return _array;
     }
-    
+
+    public IEnumerator GetEnumerator()
+    {
+        for (int i = 0; i < _pointer; i++)
+        {
+            yield return _array[i];
+        }
+    }
 }

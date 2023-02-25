@@ -29,11 +29,12 @@ public class Stack
             //you can also raise an exception here, but we're simple returning nothing
             return null;
         }
-        
+
         _pointer--;
         var value = _array[_pointer];
         return value;
     }
+    
 
     public string Check(string value)
     {
@@ -47,7 +48,16 @@ public class Stack
 
         return null;
     }
+    
+    public bool IsEmpty()
+    {
+        return _pointer == 0;
 
+    }
+    public string[] GetElements()
+    {
+        return _array;
+    }
     public string Pop()
     {
         if (_pointer == 0)
@@ -59,13 +69,5 @@ public class Stack
         var value = _array[_pointer];
         _array[_pointer] = null; // clear the reference to the popped element
         return value;
-    }
-    public bool IsEmpty()
-    {
-        return _pointer == 0;
-    }
-    public string[] GetElements()
-    {
-        return _array;
     }
 }
